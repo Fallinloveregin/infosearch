@@ -40,7 +40,7 @@ def create_inverted_indexes_to_pickle():
     sites = get_sites()
     for site_id in sites:
         print(f"Parse {site_id} file")
-        with open(f"../task_1/sites/{str(site_id)}.txt", "r", encoding="utf-8") as f:
+        with open(f"../task_1/sites/{str(site_id)}.txt", "r", encoding="utf-8", errors="ignore") as f:
             text = text_preprocessing(f.read())
             words = get_words_from_text(text)
             for word in words:
@@ -138,5 +138,11 @@ def main():
         }
     )
 
+
+# save_index_file_to_pickle()
+#
+# create_inverted_indexes_to_pickle()
+#
+# save_inverted_indexes_to_txt()
 
 main()
